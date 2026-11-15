@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Aaron Delgado through email, LinkedIn, or GitHub.">
+    <title>Contact | Aaron Delgado</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-contact">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <p><a href="index.html">Aaron Delgado</a></p>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id = "main-content" tabindex="-1">
+        <header class="page-heading">
+            <h1 id = "contact-title">Contact</h1>
+        </header>
+
+        <section id = "contact-information">
+            <h2>Get in touch</h2>
+            <p>
+                If you want to ask me about a project or talk about working together, you can email me.
+                My GitHub and LinkedIn are here too if you want to look through more of my work.
+            </p>
+
+            <address>
+                <ul class="contact-links">
+                    <li>
+                        <span>Email</span>
+                        <a href="mailto:aad010@ucsd.edu">aad010@ucsd.edu</a>
+                    </li>
+                    <li>
+                        <span>LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/aaron-delgado-aad/">Aaron Delgado on LinkedIn</a>
+                    </li>
+                    <li>
+                        <span>GitHub</span>
+                        <a href="https://github.com/aarond67">Aaron Delgado on GitHub</a>
+                    </li>
+                </ul>
+            </address>
+        </section>
+
+        <section id = "contact-message-form">
+            <h2>Message form</h2>
+
+            <form action="contact.html" method="get">
+                <fieldset>
+                    <legend>Your message</legend>
+
+                    <p>
+                        <label for="sender-name">Name</label>
+                        <input id = "sender-name" name="sender-name" type="text" autocomplete="name" required>
+                    </p>
+
+                    <p>
+                        <label for="sender-email">Email</label>
+                        <input id = "sender-email" name="sender-email" type="email" autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="message">Message</label>
+                        <textarea id = "message" name="message" rows="5" cols="25" required></textarea>
+                    </p>
+
+                    <button type="button">Send message</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Aaron Delgado · Computer Engineering · UC San Diego
+        </p>
+
+        <nav aria-label="Additional links">
+            <ul>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="mailto:aad010@ucsd.edu">Email Aaron</a></li>
+                <li><a href="https://github.com/aarond67">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/aaron-delgado-aad/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

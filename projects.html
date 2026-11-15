@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Bad Decisions Analytics, UCSD Gym Planner, and a collaborative meme generator.">
+    <title>Projects | Aaron Delgado</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-projects">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <p><a href="index.html">Aaron Delgado</a></p>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id = "main-content" tabindex="-1">
+        <header class="page-heading">
+            <p class="eyebrow">What I've worked on</p>
+            <h1 id = "projects-title">Projects</h1>
+
+            <p>
+                These projects gave me different things to work through. Some involved collecting and showing
+                data, while another was about making an editor easy to use. I included what each one does,
+                the tools involved, and more details you can open below.
+            </p>
+        </header>
+
+        <project-nav role="navigation" aria-label="Projects on this page">
+            <ul>
+                <li><a href="#analytics">Bad Decisions Analytics</a></li>
+                <li><a href="#gym-planner">UCSD Gym Planner</a></li>
+                <li><a href="#meme-generator">Meme Generator</a></li>
+            </ul>
+        </project-nav>
+
+        <article id = "analytics" class="project-case">
+            <header>
+                <p class="eyebrow">CSE 135</p>
+                <h2>Bad Decisions Analytics</h2>
+
+                <p>
+                    This was my CSE 135 project. I wanted a way to see what was happening on a test store,
+                    including errors and loading times. The store sends activity to a collector, and the
+                    reporting site uses that data for its reports.
+                </p>
+
+                <p class="project-tools">
+                    <b>Built with:</b> PHP, MySQL, JavaScript, HTML, CSS, Apache, and Linux.
+                </p>
+
+                <ul class="project-links">
+                    <li>
+                        <a href="https://baddecisions.site/coursework/cse135/">CSE 135 project archive</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/aarond67/CSE135">Analytics source code and documentation</a>
+                    </li>
+                </ul>
+            </header>
+
+            <figure class="analytics-flow">
+                <ol class="system-flow">
+                    <li>
+                        <b>Test store</b>
+                        <span>Sends website activity</span>
+                    </li>
+                    <li>
+                        <b>Collector and MySQL</b>
+                        <span>Receive and store the data</span>
+                    </li>
+                    <li>
+                        <b>Reporting site</b>
+                        <span>Reads the data for reports</span>
+                    </li>
+                </ol>
+                <figcaption>How the test store, collector, and reports connect.</figcaption>
+            </figure>
+
+            <details class="case-details">
+                <summary>What I built and how it works</summary>
+
+                <h3>What I built</h3>
+                <p>
+                    There are reports for website errors, loading times, and where people stop during checkout.
+                    I also added a place for analyst comments and an option to download a report as a PDF.
+                </p>
+
+                <h3>How it works</h3>
+                <ul>
+                    <li>PHP sessions keep track of who's signed in, and server-side checks control which reports they can see.</li>
+                    <li>I used prepared statements for database queries and escaped text before displaying it on a page.</li>
+                    <li>The interface mostly uses plain JavaScript and CSS.</li>
+                    <li>GitHub Actions handles deployment to my DigitalOcean server.</li>
+                </ul>
+            </details>
+        </article>
+
+        <article id = "gym-planner" class="project-case">
+            <header>
+                <p class="eyebrow">Gym occupancy and planning</p>
+                <h2>UCSD Gym Planner</h2>
+
+                <p>
+                    The idea was to make it easier to check how crowded the UCSD gyms are and plan around that.
+                    The dashboard brings occupancy information into one place and also has options for
+                    workouts, meals, and a weekly schedule.
+                </p>
+
+                <p class="project-tools">
+                    <b>Built with:</b> Python, Next.js, and JavaScript.
+                </p>
+
+                <ul class="project-links">
+                    <li>
+                        <a href="https://fitness-dashboard-app-beta.vercel.app/">Open UCSD Gym Planner</a>
+                    </li>
+                </ul>
+            </header>
+
+            <figure>
+                <img
+                    src="assets/fitness-dashboard.png"
+                    alt="UCSD Gym Planner with gym occupancy and workout forecasts"
+                    width="2236"
+                    height="1454"
+                    loading="lazy">
+                <figcaption>
+                    <a href="assets/fitness-dashboard.png">View the full-size gym dashboard</a>
+                </figcaption>
+            </figure>
+
+            <details class="case-details">
+                <summary>Tools and forecast limits</summary>
+                <p>
+                    The project uses Python, Next.js, and JavaScript. The forecasts depend on the data that's
+                    available. If there isn't enough matching data, the dashboard says so instead of showing
+                    an estimate it can't support.
+                </p>
+            </details>
+        </article>
+
+        <article id = "meme-generator" class="project-case">
+            <header>
+                <p class="eyebrow">CSE 110 · Team project</p>
+                <h2>Meme Generator</h2>
+
+                <p>
+                    My team built this for CSE 110. You can upload an image or choose a template, add your
+                    text, and download the finished meme. We wanted someone to be able to work through those
+                    steps without having to figure out a complicated editor first.
+                </p>
+
+                <p class="project-tools">
+                    We used HTML, CSS, and JavaScript and hosted the app on GitHub Pages.
+                </p>
+
+                <ul class="project-links">
+                    <li>
+                        <a href="https://cse110-sp26-group18.github.io/meme-generator/meme-app/">Open the Meme Generator</a>
+                    </li>
+                </ul>
+            </header>
+
+            <figure>
+                <img
+                    src="assets/meme-generator.png"
+                    alt="Meme editor with image controls and template browsing"
+                    width="2844"
+                    height="1522"
+                    loading="lazy">
+                <figcaption>
+                    <a href="assets/meme-generator.png">View the full-size meme editor</a>
+                </figcaption>
+            </figure>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+            Aaron Delgado · Computer Engineering · UC San Diego
+        </p>
+
+        <nav aria-label="Additional links">
+            <ul>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="mailto:aad010@ucsd.edu">Email Aaron</a></li>
+                <li><a href="https://github.com/aarond67">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/aaron-delgado-aad/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

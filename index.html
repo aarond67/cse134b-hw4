@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aaron Delgado, a Computer Engineering student at UC San Diego. Explore selected projects, technical experience, and contact information.">
+    <title>Home | Aaron Delgado</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-index">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <p><a href="index.html">Aaron Delgado</a></p>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id = "main-content" tabindex="-1">
+        <section id = "portfolio-introduction">
+            <header>
+                <p class="eyebrow">Computer Engineering · UC San Diego</p>
+                <h1 id = "index-title">Aaron Delgado</h1>
+
+                <p>
+                    These are some of the projects I've worked on. I go over what each one does, how I built it,
+                    and a few of the things I had to figure out along the way. I also included more about my
+                    background and an idea I'd like to work on next.
+                </p>
+
+                <p class="introduction-links">
+                    <a href="about.html">More about me</a>
+                    <a href="projects.html">See my projects</a>
+                </p>
+            </header>
+
+            <picture>
+                <source srcset="assets/portrait.webp" type="image/webp">
+                <img
+                    src="assets/portrait.png"
+                    alt="Aaron Delgado at a waterfall"
+                    width="480"
+                    height="600">
+            </picture>
+        </section>
+
+        <section id = "featured-projects">
+            <h2>Projects I've worked on</h2>
+
+            <article class="project-entry">
+                <header>
+                    <p class="eyebrow">UCSD Gym Planner</p>
+                    <h3>Figuring out when to go to the gym</h3>
+
+                    <p>
+                        The idea was to make it easier to check how crowded the UCSD gyms are before going.
+                        The dashboard brings that information together with tools for planning a workout.
+                    </p>
+
+                    <p>
+                        <a href="projects.html#gym-planner">More about UCSD Gym Planner</a>
+                    </p>
+                </header>
+
+                <figure>
+                    <img
+                        src="assets/fitness-dashboard.png"
+                        alt="Gym dashboard with occupancy information and workout planning controls"
+                        width="2236"
+                        height="1454"
+                        loading="lazy">
+                    <figcaption>
+                        <a href="assets/fitness-dashboard.png">View the full-size gym dashboard</a>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="project-entry">
+                <header>
+                    <p class="eyebrow">Bad Decisions Analytics · CSE 135</p>
+                    <h3>Seeing what happens on a website</h3>
+
+                    <p>
+                        I built this for CSE 135 to see what was happening on a test website. It collects
+                        activity so I can look through things like errors, loading times, and how people
+                        move from one page to another.
+                    </p>
+
+                    <p>
+                        <a href="projects.html#analytics">More about Bad Decisions Analytics</a>
+                    </p>
+                </header>
+
+                <figure>
+                    <ol class="system-flow">
+                        <li>
+                            <b>Test site</b>
+                            <span>Someone uses the site</span>
+                        </li>
+                        <li>
+                            <b>Collector</b>
+                            <span>The activity is saved</span>
+                        </li>
+                        <li>
+                            <b>Reports</b>
+                            <span>I can look through the data</span>
+                        </li>
+                    </ol>
+                    <figcaption>How the parts connect.</figcaption>
+                </figure>
+            </article>
+
+            <article class="project-entry">
+                <header>
+                    <p class="eyebrow">Meme Generator · CSE 110 team project</p>
+                    <h3>Making a meme without a lot of extra steps</h3>
+
+                    <p>
+                        My team built this for CSE 110. Someone can upload an image or pick a template,
+                        add their text, and download the meme. We wanted those steps to be easy to follow.
+                    </p>
+
+                    <p>
+                        <a href="projects.html#meme-generator">More about the Meme Generator</a>
+                    </p>
+                </header>
+
+                <figure>
+                    <img
+                        src="assets/meme-generator.png"
+                        alt="Meme editor with its image workspace and template selection"
+                        width="2844"
+                        height="1522"
+                        loading="lazy">
+                    <figcaption>
+                        <a href="assets/meme-generator.png">View the full-size meme editor</a>
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <aside id = "project-notebook">
+            <p class="eyebrow">An idea I want to explore</p>
+            <h2>A project idea from Coffee Talk</h2>
+
+            <p>
+                One thing I like about <cite>Coffee Talk</cite> is how natural the conversations feel. It made me
+                wonder what it would be like to have the barista help someone with their notes and study
+                schedule, while also being someone to talk to when they need a break. That's an idea I'd like
+                to build on.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>
+            Aaron Delgado · Computer Engineering · UC San Diego
+        </p>
+
+        <nav aria-label="Additional links">
+            <ul>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="mailto:aad010@ucsd.edu">Email Aaron</a></li>
+                <li><a href="https://github.com/aarond67">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/aaron-delgado-aad/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

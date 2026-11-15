@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML element demonstrations: native media, canvas, SVG, templates, and custom elements.">
+    <title>Experiments | Aaron Delgado</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-experiments">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header>
+        <p>
+            <a href="index.html">Aaron Delgado</a>
+        </p>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+        <h1 id = "experiments-title">
+            HTML experiments
+        </h1>
+        <p>
+            This is where I'm trying out the HTML tags that don't really fit into the other pages. Each example
+            shows what the tag is being used for.
+        </p>
+        <section id = "page-progress-example">
+            <h2>Page progress</h2>
+            <label for="page-progress">Pages included: 5 of 5</label>
+            <progress id = "page-progress" value="5" max="5">5 of 5</progress>
+            <p>
+                Home, About, Projects, Contact, and this Experiments page are included.
+            </p>
+        </section>
+        <section id = "audio-example">
+            <h2 id = "audio-title">Audio</h2>
+            <p id = "audio-description">
+                For the audio example, I used a short recording of three rising tones. It doesn't have any speech.
+            </p>
+            <audio controls preload="metadata" aria-labelledby="audio-title" aria-describedby="audio-description">
+                <source src="assets/three-tones.wav" type="audio/wav">
+                Your browser does not support embedded audio.
+                <a href="assets/three-tones.wav">Download the three-tone audio sample</a>.
+            </audio>
+            <p>
+                <a href="assets/three-tones.wav">Download the WAV audio file</a>.
+            </p>
+        </section>
+        <section id = "video-example">
+            <h2 id = "video-title">Video</h2>
+            <p>
+                For the video example, I used a short clip with moving shapes and colors. It doesn't have any
+                sound.
+            </p>
+            <video controls preload="metadata" width="288" height="162" aria-labelledby="video-title" aria-describedby="video-description">
+                <source src="assets/video-test.mp4" type="video/mp4">
+                <track kind="captions" src="assets/video-test.vtt" srclang="en" label="English visual description" default>
+                Your browser does not support embedded video.
+                <a href="assets/video-test.mp4">Download the video test clip</a>.
+            </video>
+            <p id = "video-description">
+                The clip shows colored bars and moving shapes. It has no speech or other sound.
+            </p>
+            <p>
+                <a href="assets/video-test.mp4">Download the MP4 video file</a>.
+            </p>
+        </section>
+        <section id = "canvas-example">
+            <h2>Canvas</h2>
+            <p id = "canvas-description">
+                I used canvas to draw the steps from the analytics project: collect the data, store it, and use it
+                in reports. The script just draws the diagram once.
+            </p>
+            <canvas id = "pipeline-canvas" width="288" height="110" role="img" aria-label="Analytics pipeline: collect, store, report" aria-describedby="canvas-description">
+                Analytics pipeline: collect information, store it, then report it.
+            </canvas>
+            <noscript>
+                <p>
+                    JavaScript is off, so the canvas isn't drawn. The description above explains the same steps.
+                </p>
+            </noscript>
+        </section>
+        <section id = "svg-example">
+            <h2>SVG</h2>
+            <p>
+                This shows the same steps as the canvas example, but I used SVG here so it can be drawn directly
+                from the markup.
+            </p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="288" height="110" viewBox="0 0 288 110" role="img" aria-labelledby="pipeline-title pipeline-desc">
+                <title id = "pipeline-title">Analytics pipeline</title>
+                <desc id = "pipeline-desc">Collect connects to Store, which connects to Report.</desc>
+                <g fill="none" stroke="black">
+                    <rect x="4" y="25" width="80" height="50"></rect>
+                    <rect x="104" y="25" width="80" height="50"></rect>
+                    <rect x="204" y="25" width="80" height="50"></rect>
+                    <path d="M84 50 H104 M98 46 L104 50 L98 54 M184 50 H204 M198 46 L204 50 L198 54"></path>
+                </g>
+                <g fill="black" text-anchor="middle">
+                    <text x="44" y="55">Collect</text>
+                    <text x="144" y="55">Store</text>
+                    <text x="244" y="55">Report</text>
+                </g>
+            </svg>
+        </section>
+        <section id = "iframe-example">
+            <h2>Embedded Projects page</h2>
+            <p>
+                This iframe shows my Projects page inside this page. I also included a link below it so the page
+                can be opened on its own.
+            </p>
+            <div>
+                <iframe src="projects.html#analytics" title="Project descriptions from Aaron Delgado’s portfolio" width="288" height="320" loading="lazy"></iframe>
+                <p>
+                    <a href="projects.html">Read the Projects page directly</a>.
+                </p>
+            </div>
+        </section>
+        <section id = "hello-world-example">
+            <h2>Hello World</h2>
+            <p>
+                This element writes “Hello World!” in the console. It leaves the page content alone.
+            </p>
+            <hello-world></hello-world>
+            <noscript>
+                <p>
+                    JavaScript is off, so the console greeting won't run.
+                </p>
+            </noscript>
+        </section>
+        <template id = "project-article-template">
+            <article>
+                <h3>HTML portfolio</h3>
+                <p>
+                    A portfolio with separate pages for my background, projects, and contact information.
+                </p>
+                <a href="index.html">Visit the portfolio homepage</a>
+            </article>
+        </template>
+        <section id = "mathml-example">
+            <h2>MathML: mass-energy equivalence</h2>
+            <p>
+                Einstein’s mass-energy equivalence equation is <math xmlns="http://www.w3.org/1998/Math/MathML"
+                aria-label="E equals m c squared"> <mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup>
+                </math>. Here, E is energy, m is mass, and c is the speed of light in a vacuum.
+            </p>
+            <p>
+                MathML was part of the HTML specification before all major browsers supported it. That meant a
+                formula could work in one browser and fail in another. Firefox and Safari supported it earlier,
+                while Chrome added MathML Core in version 109. That gap made it harder to rely on MathML for a
+                public website.
+            </p>
+            <p>
+                Source: <a href="https://caniuse.com/mathml">Can I use: MathML browser support</a>.
+            </p>
+        </section>
+        <dialog open aria-labelledby="dialog-title" aria-describedby="dialog-description">
+            <h2 id = "dialog-title">Get in touch</h2>
+            <p id = "dialog-description">
+                Have a question about one of my projects? <a href="contact.html">Visit my Contact page</a>.
+            </p>
+        </dialog>
+    </main>
+    <footer>
+        <p>
+            Aaron Delgado · Computer Engineering · UC San Diego
+        </p>
+        <nav aria-label="Additional links">
+            <ul>
+                <li><a href="experiments.html" aria-current="page">Experiments</a></li>
+                <li><a href="mailto:aad010@ucsd.edu">Email Aaron</a></li>
+                <li><a href="https://github.com/aarond67">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/aaron-delgado-aad/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script>
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                console.log("Hello World!");
+            }
+        }
+        customElements.define("hello-world", HelloWorld);
+    </script>
+    <script>
+        const canvas = document.getElementById("pipeline-canvas");
+        const context = canvas.getContext("2d");
+        if (context) {
+            context.font = "14px sans-serif";
+            context.strokeRect(4, 25, 80, 50);
+            context.strokeRect(104, 25, 80, 50);
+            context.strokeRect(204, 25, 80, 50);
+            context.fillText("Collect", 18, 55);
+            context.fillText("Store", 126, 55);
+            context.fillText("Report", 219, 55);
+            context.fillText("→", 86, 55);
+            context.fillText("→", 186, 55);
+        }
+    </script>
+</body>
+</html>
