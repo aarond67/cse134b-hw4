@@ -8,6 +8,7 @@
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <script src="theme.js" defer></script>
+    <script src="contact.js" defer></script>
 </head>
 <body class="page-contact">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -20,9 +21,16 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" aria-current="page">Contact</a></li>
-                <li><a href="form-no-js.html">Form without JS</a></li>
-                <li><a href="form-with-js.html">Form with JS</a></li>
+                <li>
+                    <details class="contact-menu">
+                        <summary>Contact</summary>
+                        <ul>
+                            <li><a href="contact.html" aria-current="page">Contact information</a></li>
+                            <li><a href="form-no-js.html">Form without JS</a></li>
+                            <li><a href="form-with-js.html">Form with JS</a></li>
+                        </ul>
+                    </details>
+                </li>
             </ul>
         </nav>
         <button id = "theme-toggle" type="button" hidden>Use dark theme</button>
@@ -64,10 +72,14 @@
                 These are the two versions of my form for CSE 134B. They send sample information to
                 httpbin so you can see what was submitted. To contact me, use my email above.
             </p>
-            <ul>
-                <li><a href="form-no-js.html">Form without JavaScript</a></li>
-                <li><a href="form-with-js.html">Form with JavaScript feedback</a></li>
-            </ul>
+            <nav class="form-switch" aria-label="Form version">
+                <ul>
+                    <li><a href="form-no-js.html#embedded-form" target="contact-form-preview">Without JavaScript</a></li>
+                    <li><a href="form-with-js.html#embedded-form" target="contact-form-preview">With JavaScript</a></li>
+                </ul>
+            </nav>
+            <iframe id = "contact-form-preview" name="contact-form-preview" title="Sample contact form"
+                    src="form-with-js.html#embedded-form"></iframe>
         </section>
     </main>
 

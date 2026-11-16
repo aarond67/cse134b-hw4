@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact form with feedback for Aaron Delgado's portfolio.">
-    <title>Contact form with feedback | Aaron Delgado</title>
+    <title>Contact form with JavaScript | Aaron Delgado</title>
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <script src="theme.js" defer></script>
     <script src="form.js" defer></script>
 </head>
-<body class="page-form">
+<body id = "embedded-form" class="page-form">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
@@ -21,9 +21,16 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="form-no-js.html">Form without JS</a></li>
-                <li><a href="form-with-js.html" aria-current="page">Form with JS</a></li>
+                <li>
+                    <details class="contact-menu">
+                        <summary>Contact</summary>
+                        <ul>
+                            <li><a href="contact.html">Contact information</a></li>
+                            <li><a href="form-no-js.html">Form without JS</a></li>
+                            <li><a href="form-with-js.html" aria-current="page">Form with JS</a></li>
+                        </ul>
+                    </details>
+                </li>
             </ul>
         </nav>
         <button id = "theme-toggle" type="button" hidden>Use dark theme</button>
@@ -32,15 +39,21 @@
     <main id = "main-content" tabindex="-1">
         <header class="page-heading">
             <p class="eyebrow">CSE 134B · Contact form</p>
-            <h1>Contact form with feedback</h1>
+            <h1>Contact form with JavaScript</h1>
             <p>This version shows what needs fixing and how many characters you have left.</p>
             <p>
                 Use sample information here. The form sends it to httpbin so you can see what was submitted.
                 If you want to get in touch, <a href="mailto:aad010@ucsd.edu">send me an email</a>.
             </p>
+            <nav class="form-switch" aria-label="Form version">
+                <ul>
+                    <li><a href="form-no-js.html">Without JavaScript</a></li>
+                    <li><a href="form-with-js.html" aria-current="page">With JavaScript</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <form id = "contact-form" action="https://httpbin.org/post" method="post">
+        <form id = "contact-form" action="https://httpbin.org/post" method="post" target="_top">
             <input name="possible_bot" type="hidden" value="true">
             <input id = "error-history" name="form-errors" type="hidden" value="[]">
             <fieldset>
