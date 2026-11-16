@@ -1,10 +1,17 @@
 :root {
+    color-scheme: light;
     --page-background: #f6f4ee;
     --surface: #ffffff;
     --text-color: #1f2933;
     --accent-color: #193b56;
     --secondary-color: #465566;
     --border-color: #bac3cc;
+    --hover-background: #e2e8ed;
+    --control-border: #697585;
+    --error-color: #a51f32;
+    --success-color: #246b39;
+    --warning-color: #624200;
+    --warning-background: #fff0c2;
     --font-stack: Arial, Helvetica, sans-serif;
     --heading-font: Georgia, "Times New Roman", serif;
     --spacing: 1.25rem;
@@ -126,7 +133,6 @@ summary:focus {
     transform: translateY(0);
 }
 
-/* Child combinator: lists directly inside the navigation containers. */
 nav > ul,
 project-nav > ul {
     display: flex;
@@ -137,7 +143,6 @@ project-nav > ul {
     list-style: none;
 }
 
-/* Descendant combinator: links within the navigation containers. */
 nav a,
 project-nav a {
     display: inline-block;
@@ -149,12 +154,11 @@ nav a:hover,
 nav a:focus,
 project-nav a:hover,
 project-nav a:focus {
-    background-color: #e2e8ed;
+    background-color: var(--hover-background);
     color: var(--accent-color);
     text-decoration-thickness: 0.15em;
 }
 
-/* Attribute selector: the navigation link for the current page. */
 a[aria-current="page"] {
     font-weight: bold;
     text-decoration-thickness: 0.15em;
@@ -468,15 +472,6 @@ project-nav + .project-case {
     color: var(--secondary-color);
 }
 
-#contact-message-form fieldset {
-    padding: 1rem;
-}
-
-#contact-message-form input,
-#contact-message-form textarea {
-    max-width: none;
-}
-
 .page-experiments main > section {
     margin-top: 2rem;
     padding-bottom: 1.5rem;
@@ -508,7 +503,7 @@ iframe {
 }
 
 canvas {
-    background-color: var(--surface);
+    background-color: #ffffff;
 }
 
 details {
@@ -674,5 +669,134 @@ body > footer > p {
 
     project-nav > ul {
         flex-direction: column;
+    }
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --page-background: #151e27;
+    --surface: #202d3a;
+    --text-color: #f1f3f5;
+    --accent-color: #a9d6f5;
+    --secondary-color: #bdc9d4;
+    --border-color: #536779;
+    --hover-background: #2c4052;
+    --control-border: #879baa;
+    --error-color: #ffb0b8;
+    --success-color: #9cdeb0;
+    --warning-color: #ffe2a0;
+    --warning-background: #45381e;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--hover-background);
+}
+
+#theme-toggle {
+    padding: 0.4em 0.65em;
+    font-size: 0.875rem;
+}
+
+.page-form main {
+    max-width: 48rem;
+}
+
+#contact-form fieldset {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.4rem;
+    max-width: none;
+    margin: 0;
+}
+
+.form-field label {
+    margin: 0;
+    font-weight: bold;
+}
+
+.form-field small {
+    color: var(--secondary-color);
+}
+
+#contact-form :is(input, textarea):required {
+    max-width: none;
+    border: 2px solid var(--control-border);
+}
+
+#contact-form :is(input, textarea):user-invalid,
+#contact-form [aria-invalid="true"] {
+    border-color: var(--error-color);
+    border-style: dashed;
+}
+
+#contact-form :is(input, textarea):user-valid {
+    border-color: var(--success-color);
+}
+
+#contact-form button {
+    justify-self: start;
+}
+
+#form-feedback h2,
+#form-information h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+#form-feedback p {
+    margin: 0 0 0.5rem;
+    color: var(--error-color);
+}
+
+#form-information {
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--border-color);
+    background-color: var(--surface);
+}
+
+#form-information.near-limit {
+    border-color: var(--warning-color);
+    background-color: var(--warning-background);
+    color: var(--warning-color);
+}
+
+#form-information.near-limit h2 {
+    color: inherit;
+}
+
+#character-count {
+    font-variant-numeric: tabular-nums;
+}
+
+#length-warning {
+    min-height: 3.3em;
+    margin: 0.25rem 0 0;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 160ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
     }
 }

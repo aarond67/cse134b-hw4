@@ -7,6 +7,8 @@
     <title>Experiments | Aaron Delgado</title>
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js" defer></script>
+    <script src="experiments.js" defer></script>
 </head>
 <body class="page-experiments">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -20,10 +22,13 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="form-no-js.html">Form without JS</a></li>
+                <li><a href="form-with-js.html">Form with JS</a></li>
             </ul>
         </nav>
+        <button id = "theme-toggle" type="button" hidden>Use dark theme</button>
     </header>
-    <main id="main-content" tabindex="-1">
+    <main id = "main-content" tabindex="-1">
         <h1 id = "experiments-title">
             HTML experiments
         </h1>
@@ -33,10 +38,10 @@
         </p>
         <section id = "page-progress-example">
             <h2>Page progress</h2>
-            <label for="page-progress">Pages included: 5 of 5</label>
-            <progress id = "page-progress" value="5" max="5">5 of 5</progress>
+            <label for="page-progress">Pages included: 7 of 7</label>
+            <progress id = "page-progress" value="7" max="7">7 of 7</progress>
             <p>
-                Home, About, Projects, Contact, and this Experiments page are included.
+                Home, About, Projects, Contact, both form versions, and this Experiments page are included.
             </p>
         </section>
         <section id = "audio-example">
@@ -44,7 +49,7 @@
             <p id = "audio-description">
                 For the audio example, I used a short recording of three rising tones. It doesn't have any speech.
             </p>
-            <audio controls preload="metadata" aria-labelledby="audio-title" aria-describedby="audio-description">
+            <audio controls preload="none" aria-labelledby="audio-title" aria-describedby="audio-description">
                 <source src="assets/three-tones.wav" type="audio/wav">
                 Your browser does not support embedded audio.
                 <a href="assets/three-tones.wav">Download the three-tone audio sample</a>.
@@ -59,7 +64,7 @@
                 For the video example, I used a short clip with moving shapes and colors. It doesn't have any
                 sound.
             </p>
-            <video controls preload="metadata" width="288" height="162" aria-labelledby="video-title" aria-describedby="video-description">
+            <video controls preload="none" width="288" height="162" aria-labelledby="video-title" aria-describedby="video-description">
                 <source src="assets/video-test.mp4" type="video/mp4">
                 <track kind="captions" src="assets/video-test.vtt" srclang="en" label="English visual description" default>
                 Your browser does not support embedded video.
@@ -96,13 +101,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="288" height="110" viewBox="0 0 288 110" role="img" aria-labelledby="pipeline-title pipeline-desc">
                 <title id = "pipeline-title">Analytics pipeline</title>
                 <desc id = "pipeline-desc">Collect connects to Store, which connects to Report.</desc>
-                <g fill="none" stroke="black">
+                <g fill="none" stroke="currentColor">
                     <rect x="4" y="25" width="80" height="50"></rect>
                     <rect x="104" y="25" width="80" height="50"></rect>
                     <rect x="204" y="25" width="80" height="50"></rect>
                     <path d="M84 50 H104 M98 46 L104 50 L98 54 M184 50 H204 M198 46 L204 50 L198 54"></path>
                 </g>
-                <g fill="black" text-anchor="middle">
+                <g fill="currentColor" text-anchor="middle">
                     <text x="44" y="55">Collect</text>
                     <text x="144" y="55">Store</text>
                     <text x="244" y="55">Report</text>
@@ -180,28 +185,5 @@
             </ul>
         </nav>
     </footer>
-    <script>
-        class HelloWorld extends HTMLElement {
-            connectedCallback() {
-                console.log("Hello World!");
-            }
-        }
-        customElements.define("hello-world", HelloWorld);
-    </script>
-    <script>
-        const canvas = document.getElementById("pipeline-canvas");
-        const context = canvas.getContext("2d");
-        if (context) {
-            context.font = "14px sans-serif";
-            context.strokeRect(4, 25, 80, 50);
-            context.strokeRect(104, 25, 80, 50);
-            context.strokeRect(204, 25, 80, 50);
-            context.fillText("Collect", 18, 55);
-            context.fillText("Store", 126, 55);
-            context.fillText("Report", 219, 55);
-            context.fillText("→", 86, 55);
-            context.fillText("→", 186, 55);
-        }
-    </script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact form with feedback for Aaron Delgado's portfolio.">
+    <title>Contact form with feedback | Aaron Delgado</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="theme.js" defer></script>
+    <script src="form.js" defer></script>
+</head>
+<body class="page-form">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <p><a href="index.html">Aaron Delgado</a></p>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="form-no-js.html">Form without JS</a></li>
+                <li><a href="form-with-js.html" aria-current="page">Form with JS</a></li>
+            </ul>
+        </nav>
+        <button id = "theme-toggle" type="button" hidden>Use dark theme</button>
+    </header>
+
+    <main id = "main-content" tabindex="-1">
+        <header class="page-heading">
+            <p class="eyebrow">CSE 134B · Contact form</p>
+            <h1>Contact form with feedback</h1>
+            <p>This version shows what needs fixing and how many characters you have left.</p>
+            <p>
+                Use sample information here. The form sends it to httpbin so you can see what was submitted.
+                If you want to get in touch, <a href="mailto:aad010@ucsd.edu">send me an email</a>.
+            </p>
+        </header>
+
+        <form id = "contact-form" action="https://httpbin.org/post" method="post">
+            <input name="possible_bot" type="hidden" value="true">
+            <input id = "error-history" name="form-errors" type="hidden" value="[]">
+            <fieldset>
+                <legend>Your message</legend>
+
+                <p class="form-field">
+                    <label for="name">Name (required)</label>
+                    <small id = "name-help">Use 1–100 characters.</small>
+                    <input id = "name" name="name" type="text" autocomplete="name"
+                           required minlength="1" maxlength="100" aria-describedby="name-help name-error">
+                </p>
+
+                <p class="form-field">
+                    <label for="email">Email (required)</label>
+                    <small id = "email-help">For testing, use an address such as aaron@example.com.</small>
+                    <input id = "email" name="email" type="email" autocomplete="email"
+                           required aria-describedby="email-help email-error">
+                </p>
+
+                <p class="form-field">
+                    <label for="comments">Comments (required)</label>
+                    <small id = "comments-help">Use 10–1,000 characters.</small>
+                    <textarea id = "comments" name="comments" rows="6" required
+                              minlength="10" maxlength="1000" aria-describedby="comments-help comments-error character-count"></textarea>
+                </p>
+
+                <section id = "form-feedback" aria-labelledby="error-heading" aria-live="polite" hidden>
+                    <h2 id = "error-heading" hidden>Check your message</h2>
+                    <p id = "name-error" hidden></p>
+                    <p id = "email-error" hidden></p>
+                    <p id = "comments-error" hidden></p>
+                </section>
+
+                <section id = "form-information" aria-labelledby="information-heading" hidden>
+                    <h2 id = "information-heading">Comment length</h2>
+                    <output id = "character-count" for="comments" aria-live="off"></output>
+                    <p id = "length-warning" role="status"></p>
+                </section>
+
+                <button type="submit">Submit sample message</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>
+            Aaron Delgado · Computer Engineering · UC San Diego
+        </p>
+
+        <nav aria-label="Additional links">
+            <ul>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="mailto:aad010@ucsd.edu">Email Aaron</a></li>
+                <li><a href="https://github.com/aarond67">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/aaron-delgado-aad/">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
