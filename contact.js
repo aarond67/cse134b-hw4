@@ -13,12 +13,17 @@ const formSize = new ResizeObserver(function (entries) {
     formFrame.style.height = Math.ceil(height) + "px";
 });
 
+function formPagePath(url) {
+    return new URL(url).pathname.replace(/\/+$/, "").replace(/\.html$/, "");
+}
+
 function fitForm() {
     formSize.disconnect();
     const formPage = formFrame.contentDocument;
     const formContent = formPage?.querySelector("main");
+    const currentPath = formPage ? formPagePath(formPage.URL) : null;
     for (const link of formLinks) {
-        if (link.href === formPage?.URL) {
+        if (currentPath === formPagePath(link.href)) {
             link.setAttribute("aria-current", "true");
         } else {
             link.removeAttribute("aria-current");

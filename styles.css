@@ -868,12 +868,14 @@ button:hover {
     navigation: auto;
 }
 
+::view-transition-group(root),
 ::view-transition-old(root),
 ::view-transition-new(root) {
-    animation-duration: 160ms;
+    animation-duration: 240ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(root),
     ::view-transition-old(root),
     ::view-transition-new(root) {
         animation: none;
