@@ -11,14 +11,23 @@ try {
 
 function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
-    themeButton.textContent = theme === "dark" ? "Use light theme" : "Use dark theme";
+    const label = theme === "dark" ? "Use light theme" : "Use dark theme";
+    themeButton.setAttribute("aria-label", label);
+    themeButton.title = label;
 }
 
 applyTheme(selectedTheme);
 
 themeButton.addEventListener("click", function () {
     selectedTheme = selectedTheme === "light" ? "dark" : "light";
-    applyTheme(selectedTheme);
+    const updateTheme = () => applyTheme(selectedTheme);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (typeof document.startViewTransition === "function" && !reduceMotion) {
+        document.startViewTransition(updateTheme);
+    } else {
+        updateTheme();
+    }
 
     try {
         localStorage.setItem("theme", selectedTheme);

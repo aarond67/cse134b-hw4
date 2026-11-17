@@ -14,7 +14,7 @@
     <header>
         <p><a href="index.html">Aaron Delgado</a></p>
 
-        <nav aria-label="Main navigation">
+        <nav class="desktop-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -31,6 +31,27 @@
                 </li>
             </ul>
         </nav>
+        <details class="mobile-menu">
+            <summary>
+                <svg class="header-icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="assets/header-icons.svg#menu"></use>
+                </svg>
+                <svg class="header-icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="assets/header-icons.svg#close"></use>
+                </svg>
+                Menu
+            </summary>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="form-no-js.html" aria-current="page">Form without JS</a></li>
+                    <li><a href="form-with-js.html">Form with JS</a></li>
+                </ul>
+            </nav>
+        </details>
     </header>
 
     <main id = "main-content" tabindex="-1">
